@@ -1323,13 +1323,13 @@ project(':storage:api') {
   archivesBaseName = "kafka-storage-api"
 
   dependencies {
-    implementation project(':clients')
-    implementation libs.slf4jApi
+    compile project(':clients')
+    compile libs.slf4jApi
 
-    testImplementation project(':clients')
-    testImplementation project(':clients').sourceSets.test.output
-    testImplementation libs.junitJupiter
-    testImplementation libs.mockitoCore
+    testCompile project(':clients')
+    testCompile project(':clients').sourceSets.test.output
+    testCompile libs.junitJupiter
+    testCompile libs.mockitoCore
 
     testRuntime libs.slf4jlog4j
   }
@@ -1383,7 +1383,7 @@ project(':server-common') {
   archivesBaseName = "kafka-server-common"
 
   dependencies {
-    implementation project(':clients')
+    compile project(':clients')
     compile libs.slf4jApi
 
     testCompile project(':clients')
@@ -1439,20 +1439,20 @@ project(':storage') {
   archivesBaseName = "kafka-storage"
 
   dependencies {
-    implementation project(':storage:api')
-    implementation project(':clients')
-    implementation project(':metadata')
-    implementation project(':raft')
-    implementation libs.slf4jApi
-    implementation libs.jacksonDatabind
+    compile project(':storage:api')
+    compile project(':clients')
+    compile project(':metadata')
+    compile project(':raft')
+    compile libs.slf4jApi
+    compile libs.jacksonDatabind
 
-    testImplementation project(':clients')
-    testImplementation project(':clients').sourceSets.test.output
-    testImplementation project(':core')
-    testImplementation project(':core').sourceSets.test.output
-    testImplementation libs.junitJupiter
-    testImplementation libs.mockitoCore
-    testImplementation libs.bcpkix
+    testCompile project(':clients')
+    testCompile project(':clients').sourceSets.test.output
+    testCompile project(':core')
+    testCompile project(':core').sourceSets.test.output
+    testCompile libs.junitJupiter
+    testCompile libs.mockitoCore
+    testCompile libs.bcpkix
 
     testRuntime libs.slf4jlog4j
   }
